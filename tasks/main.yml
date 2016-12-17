@@ -1,0 +1,3 @@
+---
+- name: Install DO Agent
+  command: curl -sSL https://agent.digitalocean.com/install.sh | sh
