@@ -1,3 +1,9 @@
 ---
-- name: Install DO Agent
-  command: curl -sSL https://agent.digitalocean.com/install.sh | sh
+- name: Download DO Agent
+  get_url:
+    url: https://agent.digitalocean.com/install.sh
+    dest: /tmp/do_agent_install.sh
+    mode: "a+x"
+
+- name: Execute install.sh
+  shell: /tmp/do_agent_install.sh
